@@ -77,10 +77,10 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
         <BlurFade>
           <div className="text-center">
-            <p className="font-[var(--font-accent)] text-lg text-brew-orange mb-2">
+            <p className="font-accent text-lg text-brew-orange mb-2">
               don&apos;t just take our word for it
             </p>
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark mb-6">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark mb-6">
               Straight from Google
             </h2>
 
@@ -92,7 +92,7 @@ export default function Testimonials() {
                 ))}
               </div>
               <span className="text-sm font-semibold text-brew-text">5★ on Google</span>
-              <span className="text-sm text-brew-text-muted">— Loved by Ranchi</span>
+              <span className="text-sm text-brew-text-muted">• Loved by Ranchi</span>
             </div>
           </div>
         </BlurFade>

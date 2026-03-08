@@ -57,10 +57,10 @@ export default function MenuSection() {
         {/* Heading */}
         <BlurFade>
           <div className="text-center mb-12">
-            <p className="font-[var(--font-accent)] text-lg text-brew-orange mb-2">
+            <p className="font-accent text-lg text-brew-orange mb-2">
               just the highlights...
             </p>
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark">
               What&apos;s Cooking
             </h2>
           </div>
@@ -96,7 +96,7 @@ export default function MenuSection() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between gap-2 mb-1">
-                              <h3 className="font-[var(--font-subheading)] font-semibold text-brew-text text-sm sm:text-base leading-tight">
+                              <h3 className="font-subheading font-semibold text-brew-text text-sm sm:text-base leading-tight">
                                 {item.name}
                               </h3>
                               <Badge
@@ -109,7 +109,7 @@ export default function MenuSection() {
                             <p className="text-brew-text-muted text-xs sm:text-sm mb-2 line-clamp-2">
                               {item.description}
                             </p>
-                            <p className="font-[var(--font-subheading)] font-bold text-brew-green-dark text-lg">
+                            <p className="font-subheading font-bold text-brew-green-dark text-lg">
                               {item.price}
                             </p>
                           </div>
@@ -127,7 +127,7 @@ export default function MenuSection() {
         <div className="mt-12">
           <button
             onClick={() => setShowFullMenu(!showFullMenu)}
-            className="mx-auto flex items-center gap-2 text-brew-green hover:text-brew-green-dark font-[var(--font-subheading)] font-semibold text-lg transition-colors"
+            className="mx-auto flex items-center gap-2 text-brew-green hover:text-brew-green-dark font-subheading font-semibold text-lg transition-colors"
           >
             {showFullMenu ? "Hide Full Menu" : "View Full Menu (50+ items)"}
             <ChevronDown
@@ -142,7 +142,7 @@ export default function MenuSection() {
             {fullMenu.map((category) => (
               <Card key={category.category} className="border-brew-border bg-white">
                 <CardContent className="p-5">
-                  <h3 className="font-[var(--font-subheading)] font-bold text-brew-green-dark text-base mb-3 pb-2 border-b border-brew-border">
+                  <h3 className="font-subheading font-bold text-brew-green-dark text-base mb-3 pb-2 border-b border-brew-border">
                     {category.category}
                   </h3>
                   <ul className="space-y-2">
@@ -164,7 +164,7 @@ export default function MenuSection() {
         {/* Footer CTA */}
         <BlurFade delay={0.2}>
           <div className="text-center mt-12">
-            <p className="font-[var(--font-accent)] text-lg text-brew-text-muted mb-4">
+            <p className="font-accent text-lg text-brew-text-muted mb-4">
               Want something specific? DM us!
             </p>
             <a

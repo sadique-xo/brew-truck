@@ -1,5 +1,5 @@
 // ============================================
-// Brew Truck — All site content & data
+// Brew Truck • All site content & data
 // ============================================
 
 export interface MenuItem {
@@ -48,7 +48,7 @@ export const menuItems: MenuItem[] = [
     tag: "Bestseller",
     tagEmoji: "🔥",
     category: "food",
-    description: "Crispy, spicy, Korean-style — our #1 seller",
+    description: "Crispy, spicy, Korean-style • our #1 seller",
     iconName: "burger",
   },
   {
@@ -76,7 +76,7 @@ export const menuItems: MenuItem[] = [
     tag: "Signature",
     tagEmoji: "✨",
     category: "drinks",
-    description: "Tiramisu meets espresso — dangerously good",
+    description: "Tiramisu meets espresso • dangerously good",
     iconName: "iced-coffee",
   },
   {
@@ -104,7 +104,7 @@ export const menuItems: MenuItem[] = [
     tag: "New",
     tagEmoji: "🆕",
     category: "desserts",
-    description: "The viral sensation — crunchy, creamy, heavenly",
+    description: "The viral sensation • crunchy, creamy, heavenly",
     iconName: "cheesecake",
   },
   {
@@ -179,7 +179,7 @@ export const fullMenu: FullMenuCategory[] = [
     ],
   },
   {
-    category: "Coffee — Hot Brew",
+    category: "Coffee • Hot Brew",
     items: [
       { name: "Cappuccino", price: "₹59" },
       { name: "Latte (Caramel/Hazelnut)", price: "₹119" },
@@ -189,7 +189,7 @@ export const fullMenu: FullMenuCategory[] = [
     ],
   },
   {
-    category: "Coffee — Cold Brew",
+    category: "Coffee • Cold Brew",
     items: [
       { name: "Iced Latte (Caramel/Hazelnut)", price: "₹119/149" },
       { name: "Iced Caramel Macchiato", price: "₹119/149" },
@@ -218,7 +218,7 @@ export const fullMenu: FullMenuCategory[] = [
     ],
   },
   {
-    category: "Boba — Bubble Drinks",
+    category: "Boba • Bubble Drinks",
     items: [
       { name: "Classic Boba Tea", price: "₹99" },
       { name: "Strawberry Milky Boba", price: "₹119" },
@@ -272,7 +272,7 @@ export const reviews: Review[] = [
     source: "Google",
     stars: 5,
     quote:
-      "Amazing food, great service, and wonderful atmosphere — full 5 stars!",
+      "Amazing food, great service, and wonderful atmosphere • full 5 stars!",
   },
   {
     id: 3,
@@ -322,7 +322,7 @@ export const vibeCards: VibeCard[] = [
 export const businessInfo = {
   name: "Brew Truck",
   tagline: "Sip | Bite | Repeat",
-  subtitle: "Ranchi's favourite food truck — coffee, bites & good vibes",
+  subtitle: "Ranchi's favourite food truck • coffee, bites & good vibes",
   address:
     "Eastern Mall, Pantaloons, near Dangratoli Chowk, Ajit Enclave, New Barhi Toli, Ranchi, Jharkhand 834010",
   weeklyHours: [
@@ -334,7 +334,7 @@ export const businessInfo = {
     { day: "Friday", hours: "10 am – 11 pm" },
     { day: "Saturday", hours: "10 am – 10:30 pm" },
   ],
-  hoursNote: "Hours may vary — check our Instagram for daily updates!",
+  hoursNote: "Hours may vary • check our Instagram for daily updates!",
   googleMapsLink: "https://maps.app.goo.gl/MewRxeLJN4qABCNK7",
   googleMapsEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.5!2d85.33!3d23.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBrew+Truck!5e0!3m2!1sen!2sin!4v1",

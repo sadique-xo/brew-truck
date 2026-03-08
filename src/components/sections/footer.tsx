@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="text-center">
           {/* Brand */}
-          <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl font-bold mb-2">
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-2">
             {businessInfo.name}
           </h2>
-          <p className="font-[var(--font-accent)] text-xl text-brew-green-light mb-8">
+          <p className="font-accent text-xl text-brew-green-light mb-8">
             {businessInfo.tagline}
           </p>
 

@@ -13,11 +13,11 @@ function VibeCard({ emoji, title, description }: { emoji: string; title: string;
     <Card className="w-[200px] sm:w-[240px] shrink-0 border-brew-border hover:border-brew-green/30 transition-colors bg-white">
       <CardContent className="p-5 text-center">
         <div className="text-4xl mb-3">{emoji}</div>
-        <h3 className="font-[var(--font-subheading)] font-semibold text-brew-text text-sm mb-1">
+        <h3 className="font-subheading font-semibold text-brew-text text-sm mb-1">
           {title}
         </h3>
         <p className="text-brew-text-muted text-xs">{description}</p>
-        <p className="text-[10px] text-brew-border mt-3 font-[var(--font-accent)]">
+        <p className="text-[10px] text-brew-border mt-3 font-accent">
           Your photo here
         </p>
       </CardContent>
@@ -28,13 +28,13 @@ function VibeCard({ emoji, title, description }: { emoji: string; title: string;
 export default function Gallery() {
   return (
     <section id="gallery" className="relative py-20 sm:py-28 bg-brew-warm-white overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-6">
         <BlurFade>
           <div className="text-center">
-            <p className="font-[var(--font-accent)] text-lg text-brew-orange mb-2">
+            <p className="font-accent text-lg text-brew-orange mb-2">
               see what we&apos;re about
             </p>
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark">
               The Vibe
             </h2>
           </div>

@@ -25,10 +25,10 @@ export default function About() {
           {/* Text content */}
           <div>
             <BlurFade delay={0.2}>
-              <p className="font-[var(--font-accent)] text-lg text-brew-orange mb-2">
+              <p className="font-accent text-lg text-brew-orange mb-2">
                 Our story
               </p>
-              <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark mb-6">
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark mb-6">
                 More Than Just a Truck
               </h2>
             </BlurFade>
@@ -38,7 +38,7 @@ export default function About() {
                 What started as a passion for great coffee and honest food, Brew Truck
                 has become Ranchi&apos;s go-to spot for quick bites, epic brews, and good times.
                 From our signature Gur Tea at ₹20 to loaded Korean Fried Chicken, we believe
-                great food doesn&apos;t need a fancy address — just a great recipe and a lot of love.
+                great food doesn&apos;t need a fancy address • just a great recipe and a lot of love.
               </p>
             </BlurFade>
 
@@ -50,7 +50,7 @@ export default function About() {
                     key={stat.label}
                     className="text-center p-4 rounded-xl bg-brew-cream border border-brew-border"
                   >
-                    <div className="font-[var(--font-subheading)] text-2xl sm:text-3xl font-bold text-brew-green-dark">
+                    <div className="font-subheading text-2xl sm:text-3xl font-bold text-brew-green-dark">
                       <NumberTicker
                         value={stat.value}
                         prefix={stat.prefix}

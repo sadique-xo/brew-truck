@@ -31,13 +31,13 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Brew Truck — Sip | Bite | Repeat",
+  title: "Brew Truck • Sip | Bite | Repeat",
   description:
-    "Ranchi's favourite food truck — coffee, bites & good vibes. 50+ menu items, amazing coffee, and street food that hits different.",
+    "Ranchi's favourite food truck • coffee, bites & good vibes. 50+ menu items, amazing coffee, and street food that hits different.",
   keywords: ["Brew Truck", "Ranchi", "food truck", "cafe", "coffee", "street food"],
   openGraph: {
-    title: "Brew Truck — Sip | Bite | Repeat",
-    description: "Ranchi's favourite food truck — coffee, bites & good vibes.",
+    title: "Brew Truck • Sip | Bite | Repeat",
+    description: "Ranchi's favourite food truck • coffee, bites & good vibes.",
     type: "website",
   },
 };

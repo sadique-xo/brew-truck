@@ -19,22 +19,22 @@ export default function Hero() {
           {/* Text content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <BlurFade delay={0.1}>
-              <p className="font-[var(--font-accent)] text-lg sm:text-xl text-brew-orange mb-2">
+              <p className="font-accent text-lg sm:text-xl text-brew-orange mb-2">
                 Ranchi&apos;s favourite food truck
               </p>
             </BlurFade>
 
-            <h1 className="font-[var(--font-heading)] text-5xl sm:text-6xl lg:text-7xl font-bold text-brew-green-dark mb-4">
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-brew-green-dark mb-4">
               <SparklesText text="Brew Truck" />
             </h1>
 
-            <div className="font-[var(--font-subheading)] text-2xl sm:text-3xl lg:text-4xl font-semibold text-brew-text mb-6">
+            <div className="font-subheading text-2xl sm:text-3xl lg:text-4xl font-semibold text-brew-text mb-6">
               <SplitText text="Sip | Bite | Repeat" />
             </div>
 
             <BlurFade delay={0.8}>
               <p className="text-brew-text-muted text-base sm:text-lg max-w-md mx-auto lg:mx-0 mb-8">
-                Coffee, bites & good vibes — from our truck to your soul. Come hungry, leave happy.
+                Coffee, bites & good vibes • from our truck to your soul. Come hungry, leave happy.
               </p>
             </BlurFade>
 

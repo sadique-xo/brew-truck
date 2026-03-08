@@ -20,10 +20,10 @@ export default function Location() {
         {/* Heading */}
         <BlurFade>
           <div className="text-center mb-12">
-            <p className="font-[var(--font-accent)] text-lg text-brew-orange mb-2">
+            <p className="font-accent text-lg text-brew-orange mb-2">
               we&apos;re right here
             </p>
-            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-brew-green-dark">
               Come Say Hi
             </h2>
           </div>
@@ -56,7 +56,7 @@ export default function Location() {
                     <MapPin className="h-5 w-5 text-brew-green" />
                   </div>
                   <div>
-                    <h3 className="font-[var(--font-subheading)] font-semibold text-brew-text mb-0.5">
+                    <h3 className="font-subheading font-semibold text-brew-text mb-0.5">
                       Location
                     </h3>
                     <p className="text-brew-text-muted text-sm">{businessInfo.address}</p>
@@ -69,7 +69,7 @@ export default function Location() {
                     <Clock className="h-5 w-5 text-brew-orange" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-[var(--font-subheading)] font-semibold text-brew-text mb-2">
+                    <h3 className="font-subheading font-semibold text-brew-text mb-2">
                       Hours
                     </h3>
                     <div className="space-y-1">
@@ -95,7 +95,7 @@ export default function Location() {
 
                 {/* Services */}
                 <div>
-                  <h3 className="font-[var(--font-subheading)] font-semibold text-brew-text mb-3">
+                  <h3 className="font-subheading font-semibold text-brew-text mb-3">
                     Service Options
                   </h3>
                   <div className="grid grid-cols-2 gap-2">
@@ -110,7 +110,7 @@ export default function Location() {
 
                 {/* Good for */}
                 <div>
-                  <h3 className="font-[var(--font-subheading)] font-semibold text-brew-text mb-2">
+                  <h3 className="font-subheading font-semibold text-brew-text mb-2">
                     Good For
                   </h3>
                   <div className="flex flex-wrap gap-2">
