@@ -45,7 +45,15 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} {businessInfo.name}. All rights reserved.
             </p>
             <p className="text-xs text-white/40 flex items-center justify-center gap-1">
-              Built with <Heart className="h-3 w-3 fill-brew-orange text-brew-orange" /> by sadique
+              Built with <Heart className="h-3 w-3 fill-brew-orange text-brew-orange" /> by{" "}
+              <a
+                href="https://www.sadique.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white underline underline-offset-2 transition-colors"
+              >
+                Sadique
+              </a>
             </p>
           </div>
         </div>

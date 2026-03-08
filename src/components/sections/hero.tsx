@@ -11,7 +11,7 @@ import WavyDivider from "@/components/illustrations/wavy-divider";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center bg-brew-cream overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center bg-white overflow-hidden">
       <FoodDoodles variant="hero" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 pt-28">

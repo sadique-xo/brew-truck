@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   description:
     "Ranchi's favourite food truck • coffee, bites & good vibes. 50+ menu items, amazing coffee, and street food that hits different.",
   keywords: ["Brew Truck", "Ranchi", "food truck", "cafe", "coffee", "street food"],
+  icons: {
+    icon: "/Brew_logo.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Brew Truck • Sip | Bite | Repeat",
     description: "Ranchi's favourite food truck • coffee, bites & good vibes.",
