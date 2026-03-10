@@ -127,6 +127,15 @@ html {
   }
 }
 
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Marquee animation */
 @keyframes marquee {
   0% { transform: translateX(0); }
