@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import BlurFade from "@/components/magicui/blur-fade";
-import { menuItems, fullMenu } from "@/data/menu-data";
+import { menuItems } from "@/data/menu-data";
 
 import BurgerIcon from "@/components/illustrations/burger-icon";
 import FriesIcon from "@/components/illustrations/fries-icon";
@@ -47,7 +46,6 @@ const categories = [
 
 export default function MenuSection() {
   const [activeTab, setActiveTab] = useState("food");
-  const [showFullMenu, setShowFullMenu] = useState(false);
 
   const filteredItems = menuItems.filter((item) => item.category === activeTab);
 
@@ -123,60 +121,18 @@ export default function MenuSection() {
           ))}
         </Tabs>
 
-        {/* Full Menu Toggle */}
-        <div className="mt-12">
-          <button
-            onClick={() => setShowFullMenu(!showFullMenu)}
-            className="mx-auto flex items-center gap-2 text-brew-green hover:text-brew-green-dark font-subheading font-semibold text-lg transition-colors"
-          >
-            {showFullMenu ? "Hide Full Menu" : "View Full Menu (50+ items)"}
-            <ChevronDown
-              className={`h-5 w-5 transition-transform duration-300 ${showFullMenu ? "rotate-180" : ""}`}
-            />
-          </button>
-        </div>
-
-        {/* Full Menu Grid */}
-        {showFullMenu && (
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {fullMenu.map((category) => (
-              <Card key={category.category} className="border-brew-border bg-white">
-                <CardContent className="p-5">
-                  <h3 className="font-subheading font-bold text-brew-green-dark text-base mb-3 pb-2 border-b border-brew-border">
-                    {category.category}
-                  </h3>
-                  <ul className="space-y-2">
-                    {category.items.map((item) => (
-                      <li key={item.name} className="flex items-center justify-between gap-2">
-                        <span className="text-sm text-brew-text truncate">{item.name}</span>
-                        <span className="text-sm font-semibold text-brew-green-dark shrink-0">
-                          {item.price}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
-
         {/* Footer CTA */}
         <BlurFade delay={0.2}>
           <div className="text-center mt-12">
             <p className="font-accent text-lg text-brew-text-muted mb-4">
-              Want something specific? DM us!
+              Browse our full menu & order directly
             </p>
-            <a
-              href="https://www.instagram.com/brew_truck/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="/order">
               <Button
                 size="lg"
                 className="bg-brew-green hover:bg-brew-green-dark text-white rounded-full px-8"
               >
-                DM on Instagram <ExternalLink className="ml-2 h-4 w-4" />
+                View Full Menu & Order
               </Button>
             </a>
           </div>

@@ -58,7 +58,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="#menu">
+          <a href="/order">
             <Button
               size="sm"
               className={`ml-2 rounded-full bg-brew-green hover:bg-brew-green-dark text-white transition-all duration-200 ${
@@ -96,7 +96,7 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a href="#menu" onClick={() => setOpen(false)} className="mt-4 px-4">
+              <a href="/order" onClick={() => setOpen(false)} className="mt-4 px-4">
                 <Button className="w-full rounded-full bg-brew-green hover:bg-brew-green-dark text-white transition-all duration-200">
                   Order Now
                 </Button>

@@ -40,9 +40,9 @@ export default function Hero() {
 
             <BlurFade delay={1}>
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <a href="#menu">
+                <a href="/order">
                   <Button size="lg" className="bg-brew-green hover:bg-brew-green-dark text-white text-base px-8 rounded-full shadow-lg">
-                    Explore Menu
+                    Order Now
                   </Button>
                 </a>
                 <a href="#location">
