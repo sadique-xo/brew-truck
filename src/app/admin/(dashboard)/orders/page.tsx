@@ -179,13 +179,24 @@ export default function AdminOrdersPage() {
   // ─── Update order status ─────────────────────────────────
   async function updateStatus(orderId: string, newStatus: OrderStatus) {
     setUpdatingOrderId(orderId);
+
+    // Optimistic update — apply immediately so the UI feels instant
+    const updatedAt = new Date().toISOString();
+    setOrders((prev) =>
+      prev.map((o) =>
+        o.id === orderId ? { ...o, status: newStatus, updated_at: updatedAt } : o
+      )
+    );
+
     const { error } = await supabase
       .from("orders")
-      .update({ status: newStatus, updated_at: new Date().toISOString() })
+      .update({ status: newStatus, updated_at: updatedAt })
       .eq("id", orderId);
 
     if (error) {
+      // Rollback on failure — refetch to get the true state
       toast.error("Failed to update status");
+      fetchOrders();
     }
     setUpdatingOrderId(null);
   }
