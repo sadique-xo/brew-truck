@@ -1,12 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { supabaseAdmin } from "@/lib/supabase-admin";
-
-async function verifyAdmin(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const session = cookieStore.get("admin_session");
-  return !!session?.value;
-}
+import { verifyAdmin } from "@/lib/admin-auth";
 
 // GET — fetch all settings
 export async function GET() {

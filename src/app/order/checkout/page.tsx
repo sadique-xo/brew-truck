@@ -34,6 +34,7 @@ export default function CheckoutPage() {
   const [isReturning, setIsReturning] = useState(false);
   const [lookingUp, setLookingUp] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [orderPlaced, setOrderPlaced] = useState(false);
 
   // Pre-fill phone if customer is already in session
   useEffect(() => {
@@ -121,9 +122,10 @@ export default function CheckoutPage() {
       customer.setCustomer(phone, name.trim());
       customer.addActiveOrder(order.id);
 
-      // 5. Clear cart & redirect
-      cart.clearCart();
+      // 5. Mark order placed (prevents empty cart flash), redirect, then clear
+      setOrderPlaced(true);
       router.push(`/order/${order.id}`);
+      cart.clearCart();
     } catch (error) {
       console.error("Order failed:", error);
       toast.error("Something went wrong. Please try again.");
@@ -132,7 +134,7 @@ export default function CheckoutPage() {
     }
   }
 
-  if (cart.items.length === 0) {
+  if (cart.items.length === 0 && !orderPlaced) {
     return (
       <div className="min-h-screen bg-brew-warm-white flex flex-col items-center justify-center px-4 text-center">
         <ShoppingBag className="w-16 h-16 text-brew-text-muted/40 mb-4" />
@@ -148,6 +150,15 @@ export default function CheckoutPage() {
             Back to Menu
           </Button>
         </Link>
+      </div>
+    );
+  }
+
+  // Order was placed — show loading while redirecting
+  if (orderPlaced) {
+    return (
+      <div className="min-h-screen bg-brew-warm-white flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-brew-green" />
       </div>
     );
   }

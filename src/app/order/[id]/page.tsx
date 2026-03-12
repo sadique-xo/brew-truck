@@ -69,6 +69,7 @@ export default function OrderTrackingPage() {
   const [items, setItems] = useState<OrderItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [statusChanged, setStatusChanged] = useState(false);
+  const [unauthorized, setUnauthorized] = useState(false);
 
   // Fetch order + items
   useEffect(() => {
@@ -80,6 +81,15 @@ export default function OrderTrackingPage() {
 
       if (orderRes.data) {
         const o = orderRes.data as Order;
+
+        // Verify ownership: if a customer is logged in with a different phone,
+        // deny access to this order
+        if (customer.isLoggedIn && customer.phone !== o.customer_phone) {
+          setUnauthorized(true);
+          setLoading(false);
+          return;
+        }
+
         setOrder(o);
         // Track active order and save customer info
         if (!["picked_up", "cancelled"].includes(o.status)) {
@@ -144,9 +154,29 @@ export default function OrderTrackingPage() {
     );
   }
 
+  if (unauthorized) {
+    return (
+      <div className="min-h-screen bg-brew-warm-white flex flex-col items-center justify-center px-4 text-center pb-24">
+        <XCircle className="w-16 h-16 text-red-400 mb-4" />
+        <h1 className="font-heading text-xl text-brew-text mb-2">
+          Access denied
+        </h1>
+        <p className="text-brew-text-muted mb-6">
+          This order belongs to a different account.
+        </p>
+        <Link href="/order/orders">
+          <Button className="bg-brew-green hover:bg-brew-green-dark text-white">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            View My Orders
+          </Button>
+        </Link>
+      </div>
+    );
+  }
+
   if (!order) {
     return (
-      <div className="min-h-screen bg-brew-warm-white flex flex-col items-center justify-center px-4 text-center">
+      <div className="min-h-screen bg-brew-warm-white flex flex-col items-center justify-center px-4 text-center pb-24">
         <XCircle className="w-16 h-16 text-red-400 mb-4" />
         <h1 className="font-heading text-xl text-brew-text mb-2">
           Order not found
@@ -187,7 +217,7 @@ export default function OrderTrackingPage() {
         </div>
       </header>
 
-      <main className="max-w-2xl mx-auto px-4 py-6 space-y-6">
+      <main className="max-w-2xl mx-auto px-4 py-6 pb-24 space-y-6">
         {/* Confirmation banner */}
         <div
           className={`rounded-2xl p-6 text-center transition-all duration-500 ${

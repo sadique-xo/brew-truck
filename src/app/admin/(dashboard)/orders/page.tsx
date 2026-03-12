@@ -26,6 +26,7 @@ import {
   XCircle,
   ArrowRight,
   Loader2,
+  Printer,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -391,74 +392,86 @@ export default function AdminOrdersPage() {
                 )}
 
                 {/* Action buttons */}
-                {order.status !== "picked_up" && order.status !== "cancelled" && (
-                  <div className="flex items-center gap-2">
-                    {next && (
-                      <Button
-                        size="sm"
-                        className="flex-1 bg-brew-green hover:bg-brew-green-dark text-white rounded-lg h-9 text-sm font-medium"
-                        onClick={() => updateStatus(order.id, next)}
-                        disabled={isUpdating}
-                      >
-                        {isUpdating ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                        ) : (
-                          <>
-                            {statusConfig[next].label}
-                            <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                          </>
-                        )}
-                      </Button>
-                    )}
-                    <Dialog>
-                      <DialogTrigger
-                        render={
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            className="border-red-200 text-red-600 hover:bg-red-50 rounded-lg h-9 text-sm"
-                          />
-                        }
-                      >
-                        Cancel
-                      </DialogTrigger>
-                      <DialogContent>
-                        <DialogTitle>Cancel Order</DialogTitle>
-                        <DialogDescription>
-                          Are you sure you want to cancel order #
-                          {String(order.order_number).padStart(3, "0")}? The
-                          customer will see this update in real time.
-                        </DialogDescription>
-                        <div className="flex gap-2 justify-end mt-4">
-                          <DialogClose
-                            render={
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="rounded-lg"
-                              />
-                            }
-                          >
-                            Keep Order
-                          </DialogClose>
-                          <DialogClose
-                            render={
-                              <Button
-                                size="sm"
-                                className="bg-red-600 hover:bg-red-700 text-white rounded-lg"
-                                onClick={() =>
-                                  updateStatus(order.id, "cancelled")
-                                }
-                              />
-                            }
-                          >
-                            Yes, Cancel
-                          </DialogClose>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
-                  </div>
-                )}
+                <div className="flex items-center gap-2">
+                  {order.status !== "picked_up" && order.status !== "cancelled" && (
+                    <>
+                      {next && (
+                        <Button
+                          size="sm"
+                          className="flex-1 bg-brew-green hover:bg-brew-green-dark text-white rounded-lg h-9 text-sm font-medium"
+                          onClick={() => updateStatus(order.id, next)}
+                          disabled={isUpdating}
+                        >
+                          {isUpdating ? (
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                          ) : (
+                            <>
+                              {statusConfig[next].label}
+                              <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                            </>
+                          )}
+                        </Button>
+                      )}
+                      <Dialog>
+                        <DialogTrigger
+                          render={
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="border-red-200 text-red-600 hover:bg-red-50 rounded-lg h-9 text-sm"
+                            />
+                          }
+                        >
+                          Cancel
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogTitle>Cancel Order</DialogTitle>
+                          <DialogDescription>
+                            Are you sure you want to cancel order #
+                            {String(order.order_number).padStart(3, "0")}? The
+                            customer will see this update in real time.
+                          </DialogDescription>
+                          <div className="flex gap-2 justify-end mt-4">
+                            <DialogClose
+                              render={
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="rounded-lg"
+                                />
+                              }
+                            >
+                              Keep Order
+                            </DialogClose>
+                            <DialogClose
+                              render={
+                                <Button
+                                  size="sm"
+                                  className="bg-red-600 hover:bg-red-700 text-white rounded-lg"
+                                  onClick={() =>
+                                    updateStatus(order.id, "cancelled")
+                                  }
+                                />
+                              }
+                            >
+                              Yes, Cancel
+                            </DialogClose>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    </>
+                  )}
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="border-brew-border text-brew-text-muted hover:text-brew-text rounded-lg h-9"
+                    onClick={() =>
+                      window.open(`/admin/receipt/${order.id}`, "_blank")
+                    }
+                  >
+                    <Printer className="w-3.5 h-3.5" />
+                  </Button>
+                </div>
               </div>
             );
           })}

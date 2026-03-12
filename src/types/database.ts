@@ -114,3 +114,13 @@ export interface OrderItemInsert {
   unit_price: number;
   subtotal: number;
 }
+
+export interface OrderWithItems extends Order {
+  order_items: OrderItem[];
+}
+
+export interface CustomerWithStats extends Customer {
+  total_orders: number;
+  total_spent: number;
+  last_order_date: string | null;
+}

@@ -15,15 +15,8 @@ export function BottomNav() {
   const pathname = usePathname();
   const cart = useCart();
 
-  // Hide on order tracking pages and checkout
+  // Hide on checkout page only
   if (pathname.startsWith("/order/checkout")) return null;
-  if (
-    pathname.startsWith("/order/") &&
-    pathname !== "/order" &&
-    pathname !== "/order/cart" &&
-    pathname !== "/order/orders"
-  )
-    return null;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-brew-border safe-area-bottom">

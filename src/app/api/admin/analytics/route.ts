@@ -1,13 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { verifyAdmin } from "@/lib/admin-auth";
 import { toISTDateKey, getISTHour, istDaysAgoStartUTC, istTodayKey } from "@/lib/ist";
-
-async function verifyAdmin(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const session = cookieStore.get("admin_session");
-  return !!session?.value;
-}
 
 export async function GET(req: NextRequest) {
   if (!(await verifyAdmin())) {
